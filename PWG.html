@@ -2,109 +2,107 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <title>St. John's Northwestern Password Generator</title>
-    <style>
-        body {
-            font-family: Arial, sans-serif;
-            background-color: #f4f4f4;
-            padding: 20px;
-            display: flex;
-            justify-content: center;
-        }
-        .container {
-            background: white;
-            border-radius: 10px;
-            box-shadow: 0 4px 8px rgba(0,0,0,0.1);
-            max-width: 500px;
-            padding: 20px;
-            text-align: center;
-        }
-        img {
-            max-width: 200px;
-            margin-bottom: 20px;
-        }
-        h2 {
-            color: #4b2e83;
-        }
-        label {
-            font-weight: bold;
-            margin-top: 10px;
-            display: block;
-        }
-        input, textarea {
-            width: 80%;
-            margin: 10px auto;
-            padding: 8px;
-            border-radius: 4px;
-            border: 1px solid #ccc;
-        }
-        button {
-            background-color: #4b2e83;
-            color: white;
-            padding: 10px 20px;
-            border: none;
-            border-radius: 5px;
-            font-size: 1rem;
-            cursor: pointer;
-        }
-        button:hover {
-            background-color: #3a2367;
-        }
-    </style>
+  <meta charset="UTF-8" />
+  <title>St. John's Northwestern Password Generator</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #f4f4f4;
+      padding: 20px;
+      display: flex;
+      justify-content: center;
+    }
+    .container {
+      background: white;
+      border-radius: 10px;
+      box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+      max-width: 500px;
+      padding: 20px;
+      text-align: center;
+    }
+    img {
+      max-width: 200px;
+      margin-bottom: 20px;
+    }
+    h2 {
+      color: #4b2e83;
+    }
+    label {
+      font-weight: bold;
+      margin-top: 10px;
+      display: block;
+    }
+    input, textarea {
+      width: 80%;
+      margin: 10px auto;
+      padding: 8px;
+      border-radius: 4px;
+      border: 1px solid #ccc;
+    }
+    button {
+      background-color: #4b2e83;
+      color: white;
+      padding: 10px 20px;
+      border: none;
+      border-radius: 5px;
+      font-size: 1rem;
+      cursor: pointer;
+    }
+    button:hover {
+      background-color: #3a2367;
+    }
+  </style>
 </head>
 <body>
-<div class="container">
-    <img src="https://microze33.github.io/SJNA/SJNALogo.png" alt="St. John's Northwestern Logo">
+  <div class="container">
+    <img src="https://microze33.github.io/SJNA/SJNALogo.png" alt="St. John's Northwestern Logo" />
     <h2>Secure Password Generator</h2>
-    
-    <label for="wordCount">Number of Words (2-4):</label>
-    <input type="number" id="wordCount" value="2" min="2" max="4">
-    
-    <label for="charLimit">Max Password Length (8–64):</label>
-    <input type="number" id="charLimit" value="20" min="8" max="64">
-    
-    <button onclick="generateReadablePassword()">Generate Password</button>
-    <br><br>
-    <textarea id="output" rows="2" readonly></textarea>
-</div>
 
-<script>
-    function generateReadablePassword() {
-        const words = [const words = ["academy", "cadet", "leadership", "honor", "duty", "integrity", "service", "excellence", "chapel", "uniform", "formation", "parade", "drill", "platoon", "rifle", "saber", "beret", "salute", "march", "barracks", "mentor", "tradition", "values", "courage", "respect", "responsibility", "accountability", "discipline", "teamwork", "loyalty", "pride", "strength", "resilience", "confidence", "trust", "character", "respectful", "focused", "prepared", "determined", "campus", "Messerschmidt", "Victory", "Welles", "Derrick", "Wehr", "Herro", "fieldhouse", "gym", "track", "football", "soccer", "basketball", "baseball", "lacrosse", "wrestling", "riflery", "swim", "golf", "tennis", "crosscountry", "volleyball", "weightroom", "PT", "challenge", "hustle", "score", "win", "sportsmanship", "team", "coach", "practice", "goal", "defense", "offense", "training", "victory", "varsity", "junior", "athlete", "academic", "classroom", "study", "library", "test", "exam", "homework", "reading", "writing", "math", "science", "history", "english", "literature", "economics", "government", "robotics", "STEM", "coding", "cybersecurity", "technology", "laptop", "smartboard", "wifi", "network", "project", "assignment", "teacher", "professor", "principal", "dean", "registrar", "advisor", "classmate", "senior", "junior", "sophomore", "freshman", "graduate", "alumni", "college", "application", "ACT", "SAT", "transcript", "GPA", "diploma", "curriculum", "syllabus", "lecture", "notebook", "pen", "backpack", "locker", "schedule", "bell", "period", "break", "lunch", "dinner", "cafeteria", "tray", "juice", "milk", "cookie", "apple", "chicken", "pizza", "burger", "salad", "hallway", "dorm", "roommate", "room", "bed", "bunk", "desk", "closet", "fan", "window", "sunrise", "flagpole", "flag", "anthem", "reveille", "retreat", "taps", "boots", "polish", "inspection", "orders", "rank", "lieutenant", "captain", "major", "colonel", "commander", "sergeant", "officer", "enlist", "military", "regiment", "corps", "nco", "chain", "command", "operations", "mission", "briefing", "strategy", "map", "radio", "squad", "dutybook", "logbook", "firewatch", "guard", "sentry", "barricade", "fitness", "run", "pushup", "situp", "plank", "mile", "jog", "stretch", "endurance", "speed", "spirit", "banner", "color", "school", "cheer", "song", "choir", "band", "drum", "trumpet", "tuba", "clarinet", "guitar", "piano", "music", "notes", "harmony", "chorus", "art", "paint", "brush", "canvas", "sculpt", "gallery", "photo", "design", "digital", "poster", "club", "activity", "event", "dance", "prom", "banquet", "gala", "auction", "excalibur", "celebration", "heritage", "legacy", "future", "vision", "faith", "hope", "charity", "chaplain", "prayer", "sermon", "bible", "cross", "pew", "altar", "hymn", "communion", "reflection", "mentorship", "growth", "maturity", "help", "peer", "support", "counsel", "guide", "direction", "purpose", "success", "career", "internship", "resume", "interview", "job", "networking", "ambition", "plan", "path", "journey", "experience", "travel", "NATO", "international", "exchange", "friendship", "diversity", "community", "citizenship", "global", "culture", "language", "translation", "midwest", "Delafield", "Wisconsin", "forest", "lake", "trails", "hike", "nature", "wildlife", "hawk", "eagle", "deer", "turkey", "squirrel", "fox", "snow", "fall", "autumn", "winter", "spring", "summer", "season", "weather", "rain", "wind", "sun", "sky", "moon", "stars", "galaxy", "rocket", "explore", "lab", "microscope", "experiment", "hypothesis", "result", "conclusion", "logic", "reason", "debate", "argument", "ethics", "philosophy", "truth", "justice", "rights", "law", "defense", "cyber", "intel", "tactics", "lead", "follow", "bond", "unity", "faithful", "honorbound", "resolve", "tenacity", "valor", "bravery", "grit", "focus", "alert", "aware", "watch", "observe", "report", "respond", "communicate", "signal", "IT", "support", "cyberpatriot", "tools", "monitor", "analyze", "protect", "defend", "firewall", "router", "server", "password", "identity", "threat", "infosec", "data", "analytics", "cloud", "upload", "download", "drive", "doc", "pdf", "email", "zoom", "portal", "announcement", "reminder", "update", "policy", "procedure", "handbook", "manual", "form", "submit", "approve", "ticket", "request", "calendar", "meeting", "agenda", "task", "list", "milestone", "checklist", "student", "soldier", "friend", "teammate", "tiger", "ocean", "laptop", "banana", "rocket", "wizard", "castle", "falcon", "dragon", "forest", "comet", "guitar", "pirate", "planet"];
+    <label for="wordCount">Number of Words (2–4):</label>
+    <input type="number" id="wordCount" value="2" min="2" max="4" />
+
+    <label for="charLimit">Max Password Length (8–64):</label>
+    <input type="number" id="charLimit" value="20" min="8" max="64" />
+
+    <button id="generateBtn">Generate Password</button>
+
+    <br /><br />
+    <textarea id="output" rows="2" readonly></textarea>
+  </div>
+
+  <script>
+    document.addEventListener("DOMContentLoaded", function () {
+      document.getElementById("generateBtn").addEventListener("click", generateReadablePassword);
+
+      function generateReadablePassword() {
+        const words = ["tiger", "ocean", "laptop", "banana", "rocket", "wizard", "castle", "falcon", "dragon", "forest", "comet", "guitar", "pirate", "planet"];
         const specials = "!@#$%^&*()_+-=[]{}|;:,.<>?";
         const wordCount = Math.max(2, Math.min(4, parseInt(document.getElementById("wordCount").value)));
         const charLimit = Math.max(8, Math.min(64, parseInt(document.getElementById("charLimit").value)));
 
         let selectedWords = [];
         for (let i = 0; i < wordCount; i++) {
-            selectedWords.push(words[Math.floor(Math.random() * words.length)]);
+          selectedWords.push(words[Math.floor(Math.random() * words.length)]);
         }
 
-        // Capitalize one word
         selectedWords[0] = selectedWords[0].charAt(0).toUpperCase() + selectedWords[0].slice(1);
-
-        // Add one symbol and number
         const symbol = specials[Math.floor(Math.random() * specials.length)];
         const number = Math.floor(Math.random() * 100);
 
         let parts = [...selectedWords, symbol, number];
-
-        // Shuffle array
         for (let i = parts.length - 1; i > 0; i--) {
-            const j = Math.floor(Math.random() * (i + 1));
-            [parts[i], parts[j]] = [parts[j], parts[i]];
+          const j = Math.floor(Math.random() * (i + 1));
+          [parts[i], parts[j]] = [parts[j], parts[i]];
         }
 
         let password = parts.join("");
-
-        // Truncate if it exceeds the char limit
         if (password.length > charLimit) {
-            password = password.substring(0, charLimit);
+          password = password.substring(0, charLimit);
         }
 
         document.getElementById("output").value = password;
-    }
-</script>
+      }
+    });
+  </script>
 </body>
 </html>
